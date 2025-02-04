@@ -17,6 +17,9 @@ class InventoryPage extends BasePage {
     get optionZtoA () {return $('option[value="za"]')}
     get sideBarMenu () {return $('div[class="bm-menu"]')}
 
+    get itemNames () {return $$('div[class="inventory_item_name "]')}
+    get namesAll () {return this.itemNames.map(name => {return (name.getText())})} 
+    
     async clickBurgerIcon () {
         await this.burgerIcon.click()
     }

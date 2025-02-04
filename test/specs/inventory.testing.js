@@ -119,9 +119,3 @@ describe('Inventory page testing', () => {
    })
         
 })
-
-           
-        
-        
-
-       
