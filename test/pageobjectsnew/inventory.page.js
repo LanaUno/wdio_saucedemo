@@ -1,70 +1,62 @@
-import { $ } from '@wdio/globals'
 import BasePage from './base.page.js';
-
 class InventoryPage extends BasePage {
-    get pageTitle () {
-        return $('span[class="title"]')
+    get pageTitle () {return $('span[class="title"]')}
+    get burgerIcon () {return $('#react-burger-menu-btn')}
+    get logoutSidebarLink () {return $('#logout_sidebar_link')}
+    get aboutSideBarLink () {return $('#about_sidebar_link')}
+    get crossIconSideBarButton () {return $('#react-burger-cross-btn')}
+    get inventoryItem_0 () {return $('#item_0_img_link')}
+    get inventoryItem_5 () {return $('#item_5_img_link')}
+    get shoppingCartLink () {return $('a[class="shopping_cart_link"]')}
+    get sauceLabsBackpackAddToCartBtn () {return $('#add-to-cart-sauce-labs-backpack')}
+    get sauceLabsBikeLightAddToCartBtn () {return $('#add-to-cart-sauce-labs-bike-light')}
+    get myCartBadge () {return $('.shopping_cart_badge')}
+    get selectSortContainer () {return $('select[class="product_sort_container"]')}
+    get optionLowToHigh () {return $('option[value="lohi"]')}
+    get optionAtoZ () { return $('option[value="az"]')}
+    get optionZtoA () {return $('option[value="za"]')}
+    get sideBarMenu () {return $('div[class="bm-menu"]')}
+
+    async clickBurgerIcon () {
+        await this.burgerIcon.click()
     }
 
-    get burgerIcon () {
-        return $('#react-burger-menu-btn')
+    async clickLogoutSidebarLink () {
+        await this.logoutSidebarLink.click()
     }
 
-    get logoutSidebarLink () {
-        return $('#logout_sidebar_link')
+    async clickSauceLabsBackpackAddToCartBtn () {
+        await this.sauceLabsBackpackAddToCartBtn.click()
     }
 
-    get aboutSideBarLink () {
-        return $('#about_sidebar_link')
+    async clickSauceLabsBikeLightAddToCartBtn () {
+        await this.sauceLabsBikeLightAddToCartBtn.click()
     }
 
-    get crossIconSideBarButton () {
-        return $('#react-burger-cross-btn')
+    async clickShoppingCartLink () {
+        await this.shoppingCartLink.click()
     }
 
-    get inventoryItem_0 () {
-        return $('#item_0_img_link')
+    async clickSelectSortContainer () {
+        await this.selectSortContainer.click()
     }
 
-    get inventoryItem_5 () {
-        return $('#item_5_img_link')
+    async clickOptionZtoA () {
+        await this.optionZtoA.click()
     }
 
-    get shoppingCartLink () {
-        return $('a[class="shopping_cart_link"]')
+    async clickCrossIconSideBarButton () {
+        await this.crossIconSideBarButton.click()
     }
 
-    get sauceLabsBackpackAddToCartBtn () {
-        return $('#add-to-cart-sauce-labs-backpack')
+    async clickAboutSideBarLink () {
+        await this.aboutSideBarLink.click()
     }
 
-    get sauceLabsBikeLight () {
-        return $('#add-to-cart-sauce-labs-bike-light')
+    async switchWindow (path) {
+        await browser.switchWindow(path)
     }
 
-    get myCartBadge () {
-        return $('.shopping_cart_badge')
-    }
-
-    get selectSortContainer () {
-        return $('select[class="product_sort_container"]')
-    }
-
-    get optionLowToHigh () {
-        return $('option[value="lohi"]')
-    }
-
-    get optionAtoZ () {
-        return $('option[value="az"]')
-    }
-
-    get optionZtoA () {
-        return $('option[value="za"]')
-    }
-
-    get sideBarMenu () {
-        return $('div[class="bm-menu"]')
-    }
 }
 
 export default new InventoryPage();

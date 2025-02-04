@@ -1,18 +1,21 @@
-import { $ } from '@wdio/globals'
 import BasePage from './base.page.js';
 
 class FooterPage extends BasePage {
 
-    get twitterIcon () {
-        return $('a[data-test="social-twitter"]')
+    get twitterIcon () {return $('a[data-test="social-twitter"]')}
+    get facebookIcon () {return $('a[data-test="social-facebook"]')}
+    get linkedinIcon () {return $('a[data-test="social-linkedin"]')}
+
+    async clickTwitterIcon () {
+        await this.twitterIcon.click()
     }
 
-    get facebookIcon () {
-        return $('a[data-test="social-facebook"]')
+    async clickFacebookIcon () {
+        await this.facebookIcon.click()
     }
 
-    get linkedinIcon () {
-        return $('a[data-test="social-linkedin"]')
+    async clickLinkedinIcon () {
+        await this.linkedinIcon.click()
     }
 
 }
